@@ -38,7 +38,7 @@ class Reservering extends controller
 
                 $kinderen = $this->ReserveringsModel->kinderenToegestaan($postData['reserveringsId'])->AantalKinderen;
 
-                if ($kinderen > 1 && $postData['baanId'] == '4') {
+                if ($kinderen > 1 && $postData['baanId'] <= 6) {
 
                     $banen = $this->ReserveringsModel->getBanen();
                     $actiefBaanId = $this->ReserveringsModel->getActiveBaanById($id);
